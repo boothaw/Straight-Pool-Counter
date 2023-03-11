@@ -8,7 +8,7 @@ function App() {
   let totalCount = positiveCount + negativeCount;
   let total = "";
 
-  if ((!totalCount == 0) & (totalCount % 5 == 0)) {
+  if ((!totalCount === 0) & (totalCount % 5 === 0)) {
     console.log("divisible");
     total = "black";
   }
