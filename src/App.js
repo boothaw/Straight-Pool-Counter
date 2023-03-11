@@ -1,24 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./components/Button";
+import React, { useState, useEffect } from "react";
+import eightball from "./assets/eight-ball.png";
 
 function App() {
+  const [negativeCount, setNegativeCount] = useState(0);
+  const [positiveCount, setPositiveCount] = useState(0);
+
+  //   useEffect(() = {
+  // 	window.local.setItem('POSITIVE_SCORE', JSON.stringify(positiveCount));
+  //   }, [positiveCount])
+
+  //   useEffect(() => {
+  //     const data = window.localStorage.getItem("POSITIVE_SCORE");
+  //     if (data !== null) setPositiveCount(JSON.parse(data));
+  //   }, []);
+
+  //   useEffect(() => {
+  //     window.localStorage.setItem(
+  //       "POSITIVE_SCORE",
+  //       JSON.stringify(positiveCount)
+  //     );
+  //     console.log("positive score", JSON.stringify(positiveCount));
+  //   }, [positiveCount]);
+
+  //   useEffect(() => {
+  //     window.localStorage.setItem(
+  //       "NEGATIVE_SCORE",
+  //       JSON.stringify(negativeCount)
+  //     );
+  //     console.log("negative score", JSON.stringify(negativeCount));
+  //   }, [negativeCount]);
+
+  let positiveRoundCount = () => {
+    setPositiveCount(positiveCount + 1);
+    // console.log(positiveCount + 1);
+  };
+  let negativeRoundCount = () => {
+    setNegativeCount(negativeCount - 1);
+  };
+  let resetRoundCount = () => {
+    setNegativeCount(0);
+    setPositiveCount(0);
+  };
+
+  var existingPoints = true;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    existingPoints && (
+      <div className='app'>
+        <div className='table-border'>
+          <div className='title-section'>
+            <div>
+              <h1>Straight Pool Counter</h1>
+              <p>For the 21st Century</p>
+            </div>
+          </div>
+          <div className='body-section'>
+            <div className='total-score'>
+              <div className='chip'>
+                <h2>{negativeCount + positiveCount}</h2>
+              </div>
+              <p>Total:</p>
+            </div>
+            <div className='score-section'>
+              <div className='score-category'>
+                <Button title={"-"} action={negativeRoundCount} />
+                <p>Down: {negativeCount}</p>
+              </div>
+              <div className='score-category'>
+                <Button title={"+"} action={positiveRoundCount} />
+                <p>Up: {positiveCount}</p>
+              </div>
+            </div>
+          </div>
+          <button onClick={resetRoundCount} className='options-container'>
+            <img className='eightball' src={eightball} alt='8 ball settting' />
+          </button>
+        </div>
+      </div>
+    )
   );
 }
 
