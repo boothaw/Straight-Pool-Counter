@@ -1,35 +1,10 @@
 import Button from "./components/Button";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import eightball from "./assets/eight-ball.png";
 
 function App() {
   const [negativeCount, setNegativeCount] = useState(0);
   const [positiveCount, setPositiveCount] = useState(0);
-
-  //   useEffect(() = {
-  // 	window.local.setItem('POSITIVE_SCORE', JSON.stringify(positiveCount));
-  //   }, [positiveCount])
-
-  //   useEffect(() => {
-  //     const data = window.localStorage.getItem("POSITIVE_SCORE");
-  //     if (data !== null) setPositiveCount(JSON.parse(data));
-  //   }, []);
-
-  //   useEffect(() => {
-  //     window.localStorage.setItem(
-  //       "POSITIVE_SCORE",
-  //       JSON.stringify(positiveCount)
-  //     );
-  //     console.log("positive score", JSON.stringify(positiveCount));
-  //   }, [positiveCount]);
-
-  //   useEffect(() => {
-  //     window.localStorage.setItem(
-  //       "NEGATIVE_SCORE",
-  //       JSON.stringify(negativeCount)
-  //     );
-  //     console.log("negative score", JSON.stringify(negativeCount));
-  //   }, [negativeCount]);
 
   let positiveRoundCount = () => {
     setPositiveCount(positiveCount + 1);
