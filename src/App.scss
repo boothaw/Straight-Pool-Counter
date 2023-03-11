@@ -83,7 +83,8 @@ $mobile-width: 600px;
 
 		.chip {
 			background-image: url(./assets/wood-bg.jpg);
-			background-color: rgba(57,57,57,.9);
+			background-color: rgba(239,208,143,.5);
+
 			background-blend-mode: color-burn;
 			// padding: 20px 10;
 			height: 140px;
@@ -92,10 +93,19 @@ $mobile-width: 600px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transition: all ease-in .3s;
 
 			h2{
 				margin: 0 auto;
 				font-size: 5rem;
+				color: $color-black;
+			}
+		}
+		.chip.black{
+			background-color: rgba(57,57,57,.9);
+
+			h2{
+				color: $color-white;
 			}
 		}
 		p{
@@ -151,6 +161,9 @@ $mobile-width: 600px;
 
 		.eightball{
 			max-width: 48px;
+			filter: opacity(0.9);
+			background-color: #ffffed;
+			border-radius: 100%;
 		}
 	}
 }
