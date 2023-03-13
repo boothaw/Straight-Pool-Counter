@@ -78,9 +78,7 @@ $mobile-width: 600px;
 
 		.chip {
 			background-image: url(./assets/wood-bg.png);
-			// background-color: rgba(239,208,143,.5);
 			border: 2px solid $color-black;
-			// background-blend-mode: color-burn;
 			height: 140px;
 			width: 140px;
 			border-radius: 100%;
@@ -96,7 +94,6 @@ $mobile-width: 600px;
 			}
 		}
 		.chip.black{
-			// background-color: rgba(57,57,57,.9);
 			background-image: url(./assets/wood-bg-dark.png);
 			border: 2px solid $color-white;
 
