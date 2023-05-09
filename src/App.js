@@ -1,6 +1,6 @@
 import Button from "./components/Button";
 import React, { useState, useEffect } from "react";
-import eightball from "./assets/eight-ball.png";
+import eightball from "./assets/eight-ball.webp";
 
 function App() {
   const [negativeCount, setNegativeCount] = useState(0);
